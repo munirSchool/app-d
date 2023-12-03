@@ -1,0 +1,134 @@
+:root {
+  --orange-color: #EE5622;
+  --green-color: #56c553;
+  --yellow-color: #ECA72C;
+  --red-color: #f95353;
+  --main-transition: 0.3s;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+body {
+  font-family: 'Cairo', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url(./sun-tornado.png);
+}
+
+.box {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(520, 520, 520, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  margin: auto;
+  padding: 15px;
+}
+.box h2 {
+  font-weight: bold;
+  color: white;
+}
+.info h3 {
+  font-size: 22px;
+  color: var(--orange-color);
+  padding: 5px 0;
+}
+.row {
+  display: flex;
+  color: white;
+  align-items: center;
+  padding: 5px 0;
+}
+.bullet {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--orange-color);
+  border: 1px solid white;
+  margin-left: 15px;
+}
+
+.d-button {
+  font-weight: bold;
+  color: var(--orange-color);
+  margin-top: 5px;
+  transition: all;
+  transition: var(--main-transition);
+  transform: translateY(0);
+  animation: infinite pop 1s alternate;
+  cursor: pointer;
+}
+.d-button.done {
+  pointer-events: none;
+  animation: none;
+}
+.prog {
+  display: none;
+  cursor: progress;
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  background-color: #eee;
+}
+.prog.active {
+  display: block;
+}
+.prog > span {
+  position: absolute;
+  transition: var(--main-transition);
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+@keyframes pop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+.thank {
+  color: var(--green-color);
+  font-size: 22px;
+  font-weight: bold;
+  display: none;
+}
+.thank.active {
+  display: block;
+  cursor: default;
+}

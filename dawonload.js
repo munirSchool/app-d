@@ -15,10 +15,10 @@ botton.onclick = () => {
     } else if (width > 30 && width < 70) {
       spanProg.style.backgroundColor = "#ECA72C";
     } else {
-      link.click();
       spanProg.style.backgroundColor = "#56c553";
     }
     if (width === 100) {
+      link.click();
       botton.classList.add("done");
       botton.innerText = "لقد بدأ التحميل";
       thankMsg.classList.add("active");
